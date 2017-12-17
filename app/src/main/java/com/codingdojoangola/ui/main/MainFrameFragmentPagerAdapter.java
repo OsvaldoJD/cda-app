@@ -17,15 +17,15 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 public class MainFrameFragmentPagerAdapter extends FragmentStatePagerAdapter {
 
     private  String[] subMenu ;
-    private  String mChoiceType;
+    private String mChoiceType;
 
 
     //********************************** Construct *****************************************************
-    public MainFrameFragmentPagerAdapter(FragmentManager fm, Context context, String [] subMenu,String choiceType) {
+    public MainFrameFragmentPagerAdapter(FragmentManager fm, Context context, String [] subMenu, String choiceType) {
         super(fm);
 
         this.subMenu = subMenu;
-        this.mChoiceType=choiceType;
+        this.mChoiceType = choiceType;
     }
 
     //******************************************************************

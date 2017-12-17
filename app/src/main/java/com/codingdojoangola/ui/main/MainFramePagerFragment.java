@@ -18,16 +18,13 @@ import com.codingdojoangola.app.CDA;
 import com.codingdojoangola.ui.info.InfoFragment;
 import com.codingdojoangola.ui.info.MissionFragment;
 import com.codingdojoangola.ui.info.ObjectFragment;
+import com.codingdojoangola.ui.members.MembersFragment;
 
 public class MainFramePagerFragment extends Fragment {
 
     private static final String ARG_SUBMENU = "subMenu";
     private static final String ARG_POSITION = "position";
-    private static final String ARG_CHOICE ="choice";
-/*
-    private DatabaseReference mDatabase;
-    private static final String TAG = "QuickNotesMainActivity";
-    */
+    private static final String ARG_CHOICE = "choice";
 
     private CDA app;
     private  String[] subMenu ;
@@ -35,11 +32,11 @@ public class MainFramePagerFragment extends Fragment {
     private String mChoiceType;
 
     //************************************* Constructor ********************************************
-    public static MainFramePagerFragment newInstance(String [] subMenu, int position,String choiceType) {
-
+    public static MainFramePagerFragment newInstance(String [] subMenu, int position, String choiceType) {
         Bundle bpager = new Bundle();
         bpager.putStringArray(ARG_SUBMENU, subMenu);
         bpager.putInt(ARG_POSITION, position);
+        bpager.putString(ARG_CHOICE, choiceType);
 
         bpager.putString(ARG_CHOICE, choiceType);
 
@@ -55,8 +52,7 @@ public class MainFramePagerFragment extends Fragment {
             app = (CDA)getContext().getApplicationContext();
             subMenu = getArguments().getStringArray(ARG_SUBMENU);
             position = getArguments().getInt(ARG_POSITION);
-
-            mChoiceType=getArguments().getString(ARG_CHOICE);
+            mChoiceType = getArguments().getString(ARG_CHOICE);
         }
     }
 
@@ -65,23 +61,22 @@ public class MainFramePagerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View rootView=null;
+        View rootView = null;
         readBundle(getArguments());
 
-        switch (mChoiceType){
+        switch (mChoiceType) {
             case ""+R.string.project:
-
                 break;
 
             case ""+R.string.member:
                 switch (position) {
                     case 0:
+                        rootView = inflater.inflate(R.layout.fragment_members, container, false);
+                        new MembersFragment(rootView, getContext());
                         break;
                     case 1:
-                     //   rootView = inflater.inflate(R.layout.fragment_info, container, false);
                         break;
                     case 2:
-                     //   rootView = inflater.inflate(R.layout.fragment_info, container, false);
                         break;
                 }
                 break;
