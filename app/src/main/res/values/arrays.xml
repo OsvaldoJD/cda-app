@@ -62,6 +62,13 @@
 
     <!--*************************************** ABOUT ****************************************** -->
 
+    <!--*************************************** MEMBERS **************************************** -->
+    <string-array name="subMenuMember">
+        <item>@string/members</item>
+        <item>@string/to_register</item>
+        <item>@string/questions</item>
+    </string-array>
+
 
     <!--***************************************** CDA ****************************************** -->
     <string-array name="subMenuCDA">
@@ -69,11 +76,11 @@
         <item>@string/blog</item>
     </string-array>
 
-    <!--*************************************** MEMBERS **************************************** -->
-    <string-array name="subMenuMember">
-        <item>@string/members</item>
-        <item>@string/to_register</item>
-        <item>@string/questions</item>
+    <!--***************************************** INFO ***************************************** -->
+    <string-array name="subMenuInfo">
+        <item>@string/information</item>
+        <item>@string/objective</item>
+        <item>@string/mission</item>
     </string-array>
 
     <!--*********************************** NOTIFICATION *************************************** -->
@@ -99,6 +106,7 @@
         <item>@mipmap/project</item>
         <item>@mipmap/member</item>
         <item>@mipmap/cda</item>
+        <item>@mipmap/cda</item>
         <item>@mipmap/settings</item>
         <item>@mipmap/info</item>
         <item>@mipmap/logout</item>
@@ -108,6 +116,7 @@
         <item>@string/project</item>
         <item>@string/member</item>
         <item>@string/cda</item>
+        <item>@string/info</item>
         <item>@string/settings</item>
         <item>@string/about</item>
         <item>@string/exit</item>

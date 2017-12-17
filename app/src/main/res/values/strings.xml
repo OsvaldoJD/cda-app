@@ -57,6 +57,11 @@
     <string name="news">Noticias</string>
     <string name="blog">blog</string>
 
+    <string name="information">Informação</string>
+    <string name="objective">Objectivo</string>
+    <string name="mission">Missão</string>
+
+
     <!--:::::::::::::::: MONTHS :::::::::::::::::-->
     <string name="january">Janeiro</string>
     <string name="february">Fevereiro</string>
@@ -96,12 +101,10 @@
     <!--*************************************** ABOUT ****************************************** -->
 
 
-
     <!--***************************************** CDA ****************************************** -->
 
 
     <!--*************************************** MEMBERS **************************************** -->
-
 
 
     <!--*********************************** NOTIFICATION *************************************** -->
@@ -127,16 +130,20 @@
     <!-- :::::::::::: PROFILE ::::::::::::::: -->
 
 
-
     <!-- ::::::::::::  MENU ::::::::::::::: -->
     <string name="project">Projecto</string>
     <string name="member">Membros</string>
     <string name="cda">CDA</string>
+    <string name="info">Sobre</string>
     <string name="settings">Definições</string>
     <string name="about">Acerca da App</string>
     <string name="exit">Sair</string>
 
     <string name="menu_description">Icon</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_sobre">SobreActivity</string>
 
     <!-- *************************************************************************************** -->
 </resources>

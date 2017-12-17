@@ -60,11 +60,14 @@ public class MainFrameFragment extends Fragment {
             case ""+R.string.cda:
                 subMenu = getResources().getStringArray(R.array.subMenuCDA);		                //CDA
                 break;
+            case ""+R.string.info:
+                subMenu = getResources().getStringArray(R.array.subMenuInfo);		                //INFO
+                break;
 
         }
 
         //---------- ListView by Sub-Menu -------------------------
-        frameAdapterPager = new MainFrameFragmentPagerAdapter(getFragmentManager(), inflater.getContext(), subMenu);
+        frameAdapterPager = new MainFrameFragmentPagerAdapter(getFragmentManager(), inflater.getContext(), subMenu,choiceType);
         frameAdapterPager.notifyDataSetChanged();
 
         // Set up the ViewPager with the sections adapter.

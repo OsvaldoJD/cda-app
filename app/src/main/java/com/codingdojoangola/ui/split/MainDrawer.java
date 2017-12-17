@@ -46,6 +46,7 @@ public class MainDrawer {
                 ""+R.string.project,
                 ""+R.string.member,
                 ""+R.string.cda,
+                ""+R.string.info,
                 ""+R.string.settings,
                 ""+R.string.about,
                 ""+R.string.exit

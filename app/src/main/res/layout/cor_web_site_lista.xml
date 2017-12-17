@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:textAlignment="inherit"
+    android:ellipsize="marquee"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:singleLine="true"
+    android:textSize="20dp"
+    android:paddingBottom="10dp"
+    android:layout_marginLeft="10dp"
+    android:textColor="#ffffff"
+    android:drawableLeft="@drawable/icone_web_site"
+    android:drawablePadding="10dp"
+    android:id="@android:id/text2" xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+
+    />

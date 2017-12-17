@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 //:::::::::::::::: Import from third parties (com, junit, net, org)
 
@@ -16,22 +15,33 @@ import android.widget.TextView;
 //:::::::::::::::: Same project import
 import com.codingdojoangola.R;
 import com.codingdojoangola.app.CDA;
+import com.codingdojoangola.ui.info.InfoFragment;
+import com.codingdojoangola.ui.info.MissionFragment;
+import com.codingdojoangola.ui.info.ObjectFragment;
 
 public class MainFramePagerFragment extends Fragment {
 
     private static final String ARG_SUBMENU = "subMenu";
     private static final String ARG_POSITION = "position";
+    private static final String ARG_CHOICE ="choice";
+/*
+    private DatabaseReference mDatabase;
+    private static final String TAG = "QuickNotesMainActivity";
+    */
 
     private CDA app;
     private  String[] subMenu ;
     private int position;
+    private String mChoiceType;
 
     //************************************* Constructor ********************************************
-    public static MainFramePagerFragment newInstance(String [] subMenu, int position) {
+    public static MainFramePagerFragment newInstance(String [] subMenu, int position,String choiceType) {
 
         Bundle bpager = new Bundle();
         bpager.putStringArray(ARG_SUBMENU, subMenu);
         bpager.putInt(ARG_POSITION, position);
+
+        bpager.putString(ARG_CHOICE, choiceType);
 
         MainFramePagerFragment pager = new MainFramePagerFragment();
         pager.setArguments(bpager);
@@ -45,6 +55,8 @@ public class MainFramePagerFragment extends Fragment {
             app = (CDA)getContext().getApplicationContext();
             subMenu = getArguments().getStringArray(ARG_SUBMENU);
             position = getArguments().getInt(ARG_POSITION);
+
+            mChoiceType=getArguments().getString(ARG_CHOICE);
         }
     }
 
@@ -52,17 +64,58 @@ public class MainFramePagerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_pager, container, false);
 
+        View rootView=null;
         readBundle(getArguments());
 
-        Log.e("FrameFragmentPager", "subMenu - "+subMenu[position]);
+        switch (mChoiceType){
+            case ""+R.string.project:
 
-        TextView textView = (TextView) rootView.findViewById(R.id.textView);
-        textView.setText(subMenu[position]);
+                break;
 
+            case ""+R.string.member:
+                switch (position) {
+                    case 0:
+                        break;
+                    case 1:
+                     //   rootView = inflater.inflate(R.layout.fragment_info, container, false);
+                        break;
+                    case 2:
+                     //   rootView = inflater.inflate(R.layout.fragment_info, container, false);
+                        break;
+                }
+                break;
+
+            case ""+R.string.cda:
+                switch (position) {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                }
+                break;
+            case ""+R.string.info:
+                switch (position) {
+                    case 0:
+                        rootView = inflater.inflate(R.layout.fragment_info, container, false);
+                        Log.e("MainFramePageFragment","Sem Conexão???????????????????????????????");
+                        new InfoFragment(rootView);
+                        break;
+                    case 1:
+                        rootView = inflater.inflate(R.layout.fragment_objective, container, false);
+                        new ObjectFragment(rootView);
+                        break;
+                    case 2:
+                        rootView = inflater.inflate(R.layout.fragment_mission, container, false);
+                        new MissionFragment(rootView);
+                        break;
+                }
+                break;
+        }
         return rootView;
     }
+
+
 
     //*********************************************************************************************
 }
